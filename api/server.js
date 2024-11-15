@@ -24,7 +24,8 @@ const latihanRoutes = require('./routes/latihan');
 app.use('/api/latihan', latihanRoutes);
 // app.use('/api/latihan', require('./routes/auth'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ;
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
