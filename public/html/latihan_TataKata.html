@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Ejaan</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Stylesheet global -->
+    <link rel="stylesheet" href="../css/latihan.css"> <!-- Stylesheet spesifik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="container">
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>BahasaLoka</h1>
+            </header> <br><br>
+
+
+        <div id="quiz-container">
+            <!-- Area Latihan Drag and Drop -->
+            <div class="question-container" id="question-1">
+                <p>Pilihlah pembentukan kata yang benar!</p>
+                <br>
+
+                 <div class="drop-area" id="drop-area-1"></div> <br>
+                 <div class="option-container">
+                    <div class="option" draggable="true">menari</div>
+                    <div class="option" draggable="true">mensurvei</div>
+                    <div class="option" draggable="true">mensuapi</div>
+                    <div class="option" draggable="true">menyontohkan</div>
+                </div>  
+            </div>
+
+            <div class="question-container" id="question-2" style="display: none;">
+                <p>Pilihlah pembentukan kata yang benar! </p>
+                <br>
+
+                 <div class="drop-area" id="drop-area-2"></div> <br>
+                 <div class="option-container">
+                    <div class="option" draggable="true">peterjemah</div>
+                    <div class="option" draggable="true">penambang</div>
+                    <div class="option" draggable="true">penkoreksi</div>
+                    <div class="option" draggable="true">pesapu</div>
+                </div>  
+            </div>
+
+            <div class="question-container" id="question-3" style="display: none;">
+                <p>Pilihlah pembentukan kata yang kurang tepat!</p>
+                <br>
+
+                 <div class="drop-area" id="drop-area-3"></div> <br>
+                 <div class="option-container">
+                    <div class="option" draggable="true">terpercayakan</div>
+                    <div class="option" draggable="true">memotongkan</div>
+                    <div class="option" draggable="true">memperbaiki</div>
+                    <div class="option" draggable="true">tepercaya</div>
+                </div>  
+            </div>
+
+            <div class="question-container" id="question-4" style="display: none;">
+                <p>Pilihlah pembentukan kata yang benar! </p>
+                <br>
+
+                 <div class="drop-area" id="drop-area-4"></div> <br>
+                 <div class="option-container">
+                    <div class="option" draggable="true">mentaati</div>
+                    <div class="option" draggable="true">mencontek</div>
+                    <div class="option" draggable="true">menyepakati</div>
+                    <div class="option" draggable="true">mempopulerkan</div>
+                </div>  
+            </div>
+            <div class="submit-container">
+            <button class="btn-submit" id="submit-btn" onclick="checkAnswer()">Submit Jawaban</button>
+            </div>
+            <div id="notification" style="margin-top: 20px;"></div>
+            </div>
+            <div id="result"></div>
+            <button id="back-to-material" style="display: none;" onclick="goBackToMaterial()">Kembali ke Materi</button>
+        <br>
+        </main>
+        <footer class="footer">
+            <p>18222054 - Natanael S S</p>
+        </footer>
+    </div>
+
+    <script src="../js/latihan2.js"></script>
+</body>
+</html>

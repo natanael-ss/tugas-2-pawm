@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <title>Belajar Ejaan dan Tata Bahasa</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>BahasaLoka</h1>
+                <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+            </header>
+            
+            <section class="content-section">
+                <div class="cardX">
+                    <h3>Berikut ini beberapa pilihan materi yang bisa kalian pelajari. Ayo, tentukan !</h2>
+                </div>
+            </section>
+            <br>
+            <section class="content-section">
+                <div class="card">
+                    <h2>Ejaan</h2>
+                    <p>Pelajari aturan ejaan bahasa Indonesia.</p>
+                    <a href="ejaanMateri.html" class="button">Mulai</a>
+                </div>
+                <div class="card">
+                    <h2>Tata Kata</h2>
+                    <p>Pelajari aturan tata kata yang benar.</p>
+                    <a href="tatakataMateri.html" class="button">Mulai</a>
+                </div>
+                <div class="card">
+                    <h2>Tata Kalimat</h2>
+                    <p>Pelajari aturan tata kalimat yang benar.</p>
+                    <a href="tatakalimatMateri.html" class="button">Mulai</a>
+                </div>
+            </section>
+            <br><br>
+        </main>
+        <footer class="footer">
+            <p>18222054 - Natanael S S</p>
+        </footer>
+    </div>
+    <script>
+        function confirmLogout() {
+            if (confirm("Apakah Anda yakin ingin keluar?")) {
+                // Panggil fungsi logout yang sudah kita buat sebelumnya
+                handleLogout();
+                alert('Logout berhasil!');
+            }
+        }
+        
+        async function handleLogout() {
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/logout', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    // Redirect ke halaman login setelah logout berhasil
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Gagal logout. Silakan coba lagi.');
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+                alert('Terjadi kesalahan saat logout. Silakan coba lagi.');
+            }
+        }
+        </script>
+</body>
+</html>

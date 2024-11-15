@@ -1,0 +1,251 @@
+/* Gaya untuk halaman latihan */
+.question-container {
+    display: flex;              /* Mengubah menjadi flexbox */
+    flex-direction: column;      /* Agar konten berada dalam satu kolom (pertanyaan, drop-area, dan pilihan) */
+    justify-content: center;     /* Untuk vertikal, jika diinginkan */
+    align-items: center;         /* Untuk horizontal agar berada di tengah */
+    margin: 20px auto;           /* Margin auto untuk mendekati tengah */
+    text-align: center;          /* Text align untuk konten dalam container */
+    width: 80%;                  /* Kamu bisa menyesuaikan lebar sesuai kebutuhan */
+    background-color: rgb(185, 187, 202);
+    border-radius: 10px;
+    padding: 1.5rem;
+    font-family: "Poppins";
+}
+
+.drop-area, .drag-item {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    cursor: move;
+}
+
+
+/* Untuk memastikan drop-area berada di tengah */
+.drop-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #e9ecef;
+    border: 2px solid #141414;
+    border-radius: 5px;
+    margin: 0 auto; /* Untuk memposisikan di tengah secara horizontal */
+}
+
+/* Agar item tetap berada di tengah secara horizontal dan vertikal */
+.drag-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    width: 150px;
+    height: 40px;
+    cursor: move;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.drop-area.dragging-over {
+    background-color: #cce5ff;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center; /* Memusatkan secara horizontal */
+    margin-top: 20px;       /* Jarak dari pertanyaan sebelumnya */
+}
+
+.btn-submit {
+    font-family: "Montserrat";
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+    transform: translateY(-5px);
+}
+
+.option-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Jarak antar elemen */;
+}
+
+.option-containerX {
+    display: flex;
+    justify-content: center;
+    gap: 2px; /* Jarak antar elemen */;
+}
+
+.optionX {
+    padding:10px;
+    background-color: #6a6a6a;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 100px; /* Lebar setiap pilihan */
+    border-radius: 5px;
+    font-family: "Poppins";
+
+}
+
+.option {
+    padding:10px;
+    background-color: #6a6a6a;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 150px; /* Lebar setiap pilihan */
+    border-radius: 5px;
+    font-family: "Poppins";
+
+}
+
+#quiz-container .question-container:first-child {
+    display: block;
+}
+
+.question-container {
+    display: none;
+}
+
+#back-to-material {
+    background-color: #008CBA; /* Warna biru */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins";
+}
+
+#back-to-material:hover {
+    background-color: #007B9A; /* Warna saat hover */
+}
+
+#notification {
+    text-align: center;  /* Memusatkan teks */
+    margin-top: 20px;    /* Jarak dari elemen sebelumnya */
+    width: 100%;         /* Mengambil lebar penuh dari kontainer */
+}
+
+.result-message {
+    color: blue;
+    font-size: 20px;
+    font-family: "Poppins";
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .question-container {
+        width: 95%;  /* Lebar lebih fleksibel untuk layar kecil */
+        padding: 1rem;  /* Kurangi padding agar konten tidak terlalu besar */
+    }
+
+    .drag-item {
+        width: 100%;  /* Agar item memenuhi lebar layar dengan baik */
+        font-size: 14px;  /* Ukuran font lebih kecil */
+        height: auto;  /* Tinggi fleksibel untuk lebih kompatibel di layar kecil */
+    }
+
+    .drop-area {
+        width: 100%;  /* Ubah agar drop-area menyesuaikan layar kecil */
+        height: auto;  /* Tinggi otomatis menyesuaikan konten */
+        padding: 15px 0;  /* Tambahkan sedikit padding agar terlihat lebih baik */
+    }
+
+    .option-container {
+        flex-direction: column;  /* Tampilkan pilihan secara vertikal di layar kecil */
+        gap: 15px;  /* Jarak antar opsi lebih besar untuk tampilan yang rapi */
+    }
+
+    .option {
+        width: 100%;  /* Pilihan mengisi lebar penuh */
+        padding: 15px;  /* Sesuaikan padding agar nyaman di layar kecil */
+        font-size: 14px;  /* Ukuran font yang lebih kecil */
+    }
+
+    .option-containerX { 
+        flex-direction: column;   /* Stack options vertically on smaller screens */
+        gap: 15px;                /* Increase gap between options */
+        align-items: center;
+    }
+
+    .optionX {
+        width: 80%;               /* Make options take up more width on smaller devices */
+        font-size: 14px;          /* Reduce font size for smaller screens */
+        padding: 12px;            /* Increase padding for touch devices */
+    }
+
+    .btn-submit, .btn-next, #back-to-material {
+        width: 100%;  /* Tombol-tombol memenuhi lebar layar */
+        font-size: 14px;  /* Ukuran tombol lebih kecil agar pas */
+    }
+
+    .result-message {
+        font-size: 18px;  /* Ukuran font hasil lebih kecil untuk ponsel */
+    }
+}
+
+@media (max-width: 480px) {
+    .question-container {
+        width: 100%;  /* Gunakan lebar penuh di layar ponsel sangat kecil */
+    }
+
+    .drag-item {
+        font-size: 12px;  /* Ukuran font lebih kecil untuk ponsel sangat kecil */
+    }
+
+    .option {
+        font-size: 12px;  /* Sesuaikan ukuran font opsi untuk ponsel sangat kecil */
+    }
+
+    .btn-submit, .btn-next, #back-to-material {
+        font-size: 12px;  /* Ukuran font tombol lebih kecil */
+    }
+}
+
+
+.notification-success {
+    color: green;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 18px; /* Sesuaikan ukuran jika diperlukan */
+    background-color: #e0ffe0; /* Opsional: memberikan latar belakang */
+    padding: 10px; /* Opsional: spasi di sekitar teks */
+    border-radius: 5px; /* Opsional: sudut melengkung */
+}
+.notification-wrong {
+    color: red;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 18px; /* Sesuaikan ukuran jika diperlukan */
+    background-color: #e0ffe0; /* Opsional: memberikan latar belakang */
+    padding: 10px; /* Opsional: spasi di sekitar teks */
+    border-radius: 5px; /* Opsional: sudut melengkung */
+}
+

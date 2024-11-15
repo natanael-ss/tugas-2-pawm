@@ -1,0 +1,190 @@
+/* Section for Materi */
+.materi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Jarak antar kotak materi */
+    padding: 1rem;
+}
+
+.materi-box {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.materi-box h3 {
+    font-size: 1.6rem;
+    color: #494e52;
+    margin-bottom: 1rem;
+}
+
+.materi-box p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Optional: Customize the button within the Materi section */
+.materi-box .button {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.materi-box .button:hover {
+    background-color: #4682b4;
+    
+}
+
+/* Header dari materi yang bisa di-toggle */
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* cursor: pointer; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e90ff;
+    /* margin-bottom: 0.5rem; */
+    padding: 1rem 0;
+}
+
+.toggle-header h3 {
+    margin: 0; /* Hilangkan margin agar benar-benar rata */
+    line-height: 1.5rem; /* Sesuaikan dengan ketinggian yang diinginkan */
+    font-family: "Montserrat";
+    font-size: 1.5rem;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: 494e52;
+    transition: transform 0.3s ease;
+    font-family: "Montserrat";
+    font-size: 1.5rem;
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+    background-color: #9cab8e;
+    transform: translateY(3px);
+}
+.toggle-btn.active {
+    transform: rotate(180deg); /* Putar tombol saat dibuka */
+}
+
+/* Konten yang akan disembunyikan */
+.toggle-content {
+    overflow: hidden;
+    max-height: 0; /* Mulai dengan konten tersembunyi */
+    transition: max-height 0.5s ease-out; /* Animasi untuk slide ke bawah */
+}
+
+/* Konten yang muncul saat toggle */
+.toggle-content.show {
+    max-height: 500px; /* Ubah ini sesuai dengan tinggi konten yang diinginkan */
+    transition: max-height 0.5s ease-in; /* Animasi untuk slide ke atas */
+}
+
+.toggle-content p ul li {
+    font-family: system-ui;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.btn-latihan {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 10px 20px;
+    background-color: #6a6a6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: "Poppins";
+}
+
+.btn-latihan:hover {
+    transform: translateY(-4px);
+    background-color: #797878;
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem; /* Sesuaikan ukuran font untuk layar kecil */
+    }
+
+    .materi-box {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .materi-box h3 {
+        font-size: 1.4rem; /* Sesuaikan ukuran font di dalam materi */
+    }
+
+    .materi-box p {
+        font-size: 0.9rem; /* Font yang lebih kecil untuk ponsel */
+    }
+
+    .toggle-header {
+        font-size: 1.2rem; /* Sesuaikan ukuran header */
+    }
+
+    .toggle-btn {
+        font-size: 1.2rem;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    .btn-latihan {
+        padding: 8px 16px;
+        font-size: 0.9rem; /* Ukuran font lebih kecil untuk tombol */
+        width: 100%; /* Tombol memenuhi lebar layar */
+    }
+}
+
+/* Responsif untuk layar yang sangat kecil (ponsel kecil) */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem; /* Ukuran lebih kecil untuk layar sangat kecil */
+    }
+
+    .materi-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .materi-box p {
+        font-size: 0.85rem;
+    }
+
+    .btn-latihan {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}
