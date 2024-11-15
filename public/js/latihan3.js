@@ -75,7 +75,7 @@ function nextQuestion() {
         //simpan hasil database
         saveResults(finalScore);
         // Jika semua soal selesai
-        document.getElementById('result').innerHTML = "<h3 class='result-message'>Latihan selesai! Terima kasih.</h3>";
+        document.getElementById('result').innerHTML = "<h3 class='result-message'>Latihan selesai! Terima kasih.</h3> <p>Nilai Anda: ${finalScore}</p>";
         document.getElementById('quiz-container').style.display = 'none';
         document.getElementById('back-to-material').style.display='block';
     }
