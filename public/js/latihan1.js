@@ -114,10 +114,9 @@ async function checkLatihanStatus() {
         if (data.completed) {
             document.getElementById('quiz-container').innerHTML = `
                 <h3>Anda sudah mengerjakan latihan ini</h3>
-                <p>Nilai Anda: ${data.score}</p>
-                <button onclick="goBackToMaterial()">Kembali ke Materi</button>
-
-            `;
+                <p>Nilai Anda: ${data.score}</p>`;
+                document.getElementById('back-to-material').style.display='block'
+            ;
         }
     } catch (error) {
         console.error('Error:', error);
