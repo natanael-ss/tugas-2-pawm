@@ -43,7 +43,7 @@ function checkAnswer() {
 // Tambahkan fungsi saveResults
 async function saveResults(finalScore) {
     try {
-        const response = await fetch('http://localhost:5000/api/latihan/save-latihan1', {
+        const response = await fetch('api/latihan/save-latihan1', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ async function checkLatihanStatus() {
             throw new Error('Token tidak ditemukan');
         }
 
-        const response = await fetch('http://localhost:5000/api/latihan/check-latihan1-status', {
+        const response = await fetch('api/latihan/check-latihan1-status', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
